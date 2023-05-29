@@ -1,6 +1,21 @@
 # denisko890Courses_infra
 denisko890Courses Infra repository
 
+# HW 6
+testapp_IP = 158.160.104.40
+testapp_port = 9292
+
+Command for init VM and run command for deploy reddit.
+
+```
+yc compute instance create \
+  --name reddit-app \
+  --hostname reddit-app \
+  --memory=4 \
+  --create-boot-disk image-folder-id=standard-images,image-family=ubuntu-1604-lts,size=10GB \
+  --network-interface subnet-name=default-ru-central1-a,nat-ip-version=ipv4 \
+  --metadata  serial-port-enable=1 --zone ru-central1-a --metadata-from-file user-data=startup-script.yaml
+```
 
 # HW 5
 Config ~/.ssh/config
