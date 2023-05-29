@@ -2,7 +2,7 @@
 denisko890Courses Infra repository
 
 # HW 6
-testapp_IP = 158.160.104.40
+testapp_IP = 158.160.52.222
 testapp_port = 9292
 
 Command for init VM and run command for deploy reddit.
