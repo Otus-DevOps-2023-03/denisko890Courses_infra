@@ -1,0 +1,11 @@
+[Unit]
+Description=Monolith Rediit
+After=mongod.service
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/puma --dir /opt/monolith_reddit/reddit
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
