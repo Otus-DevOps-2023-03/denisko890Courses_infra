@@ -18,12 +18,12 @@
     "provisioners": [
         {
             "type": "shell",
-            "script": "/Users/denisko/Desktop/courses/otus/denisko890Courses_infra/packer/files/deploy.sh",
+            "script": "./files/deploy.sh",
             "execute_command": "sudo {{.Path}}"
         },
         {
             "type": "file",
-            "source": "/Users/denisko/Desktop/courses/otus/denisko890Courses_infra/packer/files/monolith_reddit.service",
+            "source": "./files/monolith_reddit.service",
             "destination": "/tmp/monolith_reddit.service"
         },
         {
@@ -32,7 +32,7 @@
         },
         {
             "type": "shell",
-            "script": "/Users/denisko/Desktop/courses/otus/denisko890Courses_infra/packer/files/enable_service.sh",
+            "script": "./files/enable_service.sh",
             "execute_command": "sudo {{.Path}}"
         }
     ]

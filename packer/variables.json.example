@@ -1,6 +1,6 @@
 {
    "zone": "ru-central1-a",
-   "service_account_key_file": "/path/to/key.json",
+   "service_account_key_file": "./key.json",
    "folder_id": "folder_id",
    "source_image_family": "ubuntu-1604-lts",
    "image_name": "reddit-base-{{timestamp}}",
