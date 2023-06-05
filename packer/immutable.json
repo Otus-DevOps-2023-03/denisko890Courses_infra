@@ -1,0 +1,39 @@
+{
+    "builders": [
+        {
+            "type": "yandex",
+            "zone": "{{user `zone`}}",
+            "service_account_key_file": "{{user `service_account_key_file`}}",
+            "folder_id": "{{user `folder_id`}}",
+            "source_image_family": "{{user `source_image_family`}}",
+            "image_name": "{{user `image_name`}}",
+            "image_family": "{{user `image_family`}}",
+            "ssh_username": "{{user `ssh_username`}}",
+            "platform_id": "{{user `platform_id`}}",
+            "subnet_id": "{{user `subnet_id`}}",
+            "use_ipv4_nat": "{{user `use_ipv4_nat`}}",
+            "preemptible": "{{user `preemptible`}}"
+        }
+    ],
+    "provisioners": [
+        {
+            "type": "shell",
+            "script": "./files/deploy.sh",
+            "execute_command": "sudo {{.Path}}"
+        },
+        {
+            "type": "file",
+            "source": "./files/monolith_reddit.service",
+            "destination": "/tmp/monolith_reddit.service"
+        },
+        {
+            "type": "shell",
+            "inline": "sudo mv /tmp/monolith_reddit.service /etc/systemd/system/monolith_reddit.service"
+        },
+        {
+            "type": "shell",
+            "script": "./files/enable_service.sh",
+            "execute_command": "sudo {{.Path}}"
+        }
+    ]
+}
