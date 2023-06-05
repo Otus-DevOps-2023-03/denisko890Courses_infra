@@ -1,6 +1,11 @@
 # denisko890Courses_infra
 denisko890Courses Infra repository
 
+# HW 7 Terraform 1
+
+Created Terraform files for deploy VMs with input data. Also after create vm, we deploy reddit-monolith. Also created Load Balancer for reddit VMs.
+
+
 # HW 6
 testapp_IP = 158.160.52.222
 testapp_port = 9292
