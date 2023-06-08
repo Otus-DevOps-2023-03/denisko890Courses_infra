@@ -1,10 +1,10 @@
 terraform {
-  required_providers {
-    yandex = {
-      source  = "yandex-cloud/yandex"
-      version = "0.92.0"
-    }
-  }
+#  required_providers {
+#    yandex = {
+#      source  = "yandex-cloud/yandex"
+#      version = "0.92.0"
+#    }
+#  }
 }
 
 provider "yandex" {
@@ -20,7 +20,7 @@ module "app" {
   subnet_id       = var.subnet_id
   private_key     = var.private_key
   db_address      = module.db.internal_ip_address_db
-  depends_on      = [module.db]
+#  depends_on      = [module.db]
 }
 module "db" {
   source          = "../modules/db"
