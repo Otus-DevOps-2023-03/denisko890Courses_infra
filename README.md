@@ -1,6 +1,10 @@
 # denisko890Courses_infra
 denisko890Courses Infra repository
 
+# HW 8 Terraform 2
+
+Split previous main.tf to modules app and db. Added S3 Common Storage for store tf state. Integrated app and db.
+
 # HW 7 Terraform 1
 
 Created Terraform files for deploy VMs with input data. Also after create vm, we deploy reddit-monolith. Also created Load Balancer for reddit VMs.
